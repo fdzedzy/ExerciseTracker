@@ -7,7 +7,7 @@ namespace ExerciseTracker.Model
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public DateTime BirthDate { get; set; }
+        public DateTime BirthDate { get; set; } //Todo Change this to date only without time
         public int HeightInInches { get; set; }
         public double WeightInPounds { get; set; }
         public UserCredential UserCredential { get; set; }
