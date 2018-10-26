@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ExerciseTracker.Model
 {
-    public class Set : ModelObject<int>
+    public class Set : DomainObject<int>
     {
         public int WorkoutId { get; set; }
         public int ExerciseId { get; set; }

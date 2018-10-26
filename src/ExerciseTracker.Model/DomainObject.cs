@@ -5,10 +5,8 @@ using ExerciseTracker.Model.Interface;
 
 namespace ExerciseTracker.Model
 {
-    public class ReferenceObject<TKey> : IReferenceObject<TKey>
+    public abstract class DomainObject<TKey> : IDomainObject<TKey>
     {
         public TKey Id { get; set; }
-
-        public string Name { get; set; }
     }
 }

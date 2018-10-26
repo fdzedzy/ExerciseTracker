@@ -9,12 +9,10 @@ namespace ExerciseTracker.Model
         public DateTime BirthDate { get; set; }
         public int HeightInInches { get; set; }
         public double WeightInPounds { get; set; }
+        public UserCredential UserCredential { get; set; }
 
-        public double Age()
-        {
-            int days = (DateTime.Today - BirthDate).Days;
-            double years = days / 365;
-            return years;
-        }
+        public double Bmi => Math.Round((WeightInPounds / (HeightInInches * HeightInInches)) * 703, 1);
+
+        public double Age => (DateTime.Today - BirthDate).Days / 365;
     }
 }

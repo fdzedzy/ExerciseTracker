@@ -29,12 +29,15 @@ namespace ExerciseTracker.Model.Tests
         }
 
         [TestMethod]
-        public void TestUserAge()
+        public void TestUserAge() => Assert.AreEqual(22.5, _testUser.Bmi);
+
+        [TestMethod]
+        public void TestUserBMI()
         {
-            int days = (DateTime.Today - _testUser.BirthDate).Days;
+            var days = (DateTime.Today - _testUser.BirthDate).Days;
             double ageT = days / 365;
 
-            Assert.AreEqual(ageT, _testUser.Age());
+            Assert.AreEqual(ageT, _testUser.Age);
         }
     }
 }

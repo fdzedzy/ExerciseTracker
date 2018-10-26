@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ExerciseTracker.Model.ReferenceData;
 
 namespace ExerciseTracker.Model
 {
-    public class ExerciseType : ReferenceObject<int>
+    public class ExerciseType : ReferenceObject<ExerciseTypeEnum>
     {
-        public string ExerciseTypeDescription { get; set; }
     }
 }
