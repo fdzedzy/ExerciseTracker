@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 
 namespace ExerciseTracker.Model
 {
@@ -10,9 +11,10 @@ namespace ExerciseTracker.Model
         public int HeightInInches { get; set; }
         public double WeightInPounds { get; set; }
         public UserCredential UserCredential { get; set; }
+        public Collection<Workout> Workouts { get; set; }
 
         public double Bmi => Math.Round((WeightInPounds / (HeightInInches * HeightInInches)) * 703, 1);
 
-        public double Age => (DateTime.Today - BirthDate).Days / 365;
+        public TimeSpan Age => new TimeSpan(((DateTime.Today - BirthDate).Days / 365));
     }
 }

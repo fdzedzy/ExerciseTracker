@@ -5,10 +5,11 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ExerciseTracker.Model;
+using ExerciseTracker.Model.ReferenceData;
 
 namespace ExerciseTracker.Model.DbConfig
 {
-    public class ExerciseTrackerDBContext : DbContext
+    public class ExerciseTrackerDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<UserCredential> UserCredentials { get; set; }
@@ -17,7 +18,7 @@ namespace ExerciseTracker.Model.DbConfig
         public DbSet<Set> Sets { get; set; }
         public DbSet<Workout> Workouts { get; set; }
 
-        protected ExerciseTrackerDBContext(DbContextOptions options)
+        public ExerciseTrackerDbContext(DbContextOptions options)
             : base(options)
         { }
 
@@ -44,6 +45,10 @@ namespace ExerciseTracker.Model.DbConfig
                 builder.HasKey(x => x.Id);
                 builder.Property(x => x.Id).HasColumnName("UserId");
 
+                builder.HasOne(x => x.UserCredential).WithOne(b => b.User).HasForeignKey<UserCredential>(b => b.UserId);
+                
+                // EF seems creates this correctly as long as I don't try to define it
+                //builder.HasMany<Workout>().WithOne().HasForeignKey(x => x.UserId);
             }
         }
 
@@ -54,7 +59,6 @@ namespace ExerciseTracker.Model.DbConfig
                 builder.ToTable("UserCredential");
                 builder.HasKey(x => x.Id);
                 builder.Property(x => x.Id).HasColumnName("UserCredentialId");
-
             }
         }
 
@@ -77,6 +81,10 @@ namespace ExerciseTracker.Model.DbConfig
                 builder.HasKey(x => x.Id);
                 builder.Property(x => x.Id).HasColumnName("ExerciseTypeId");
 
+                foreach (var e in Enum.GetValues(typeof(ExerciseTypeEnum)).Cast<ExerciseTypeEnum>())
+                {
+                    builder.HasData(new ExerciseType { Id = e, Name = e.ToString() });
+                }
             }
         }
 
@@ -88,6 +96,7 @@ namespace ExerciseTracker.Model.DbConfig
                 builder.HasKey(x => x.Id);
                 builder.Property(x => x.Id).HasColumnName("SetId");
 
+                builder.HasOne<Exercise>().WithMany().HasForeignKey(x => x.ExerciseId);
             }
         }
 

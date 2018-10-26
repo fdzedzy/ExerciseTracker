@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ExerciseTracker.Model
+﻿namespace ExerciseTracker.Model.Interface
 {
     public interface IModelObject<TKey>
     {

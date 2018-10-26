@@ -7,11 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciseTracker.Model", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciseTracker.Model.Tests", "tests\ExerciseTracker.Model.Tests\ExerciseTracker.Model.Tests.csproj", "{FCC6037C-2B2C-45C7-9A0E-428D18ACD046}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciseTracker.BusinessLogic", "src\ExerciseTracker.BusinessLogic\ExerciseTracker.BusinessLogic.csproj", "{3EDFE94D-FB15-4066-B3D7-8B78C0D1A4F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciseTracker.BusinessLogic", "src\ExerciseTracker.BusinessLogic\ExerciseTracker.BusinessLogic.csproj", "{3EDFE94D-FB15-4066-B3D7-8B78C0D1A4F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciseTracker.BusinessLogic.Tests", "tests\ExerciseTracker.BusinessLogic.Tests\ExerciseTracker.BusinessLogic.Tests.csproj", "{BC21DB36-548D-4C8D-B4D5-104397A34D18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciseTracker.BusinessLogic.Tests", "tests\ExerciseTracker.BusinessLogic.Tests\ExerciseTracker.BusinessLogic.Tests.csproj", "{BC21DB36-548D-4C8D-B4D5-104397A34D18}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{250DA9AA-1801-4E42-BFBC-59CE8CF64070}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A42CC452-0FC5-437C-BFFF-A7C7DB9CD3C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciseTracker.WebApi", "src\ExerciseTracker.WebApi\ExerciseTracker.WebApi.csproj", "{17E38C19-14AC-40B7-8F6D-98A020CBAD1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,13 +39,20 @@ Global
 		{BC21DB36-548D-4C8D-B4D5-104397A34D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC21DB36-548D-4C8D-B4D5-104397A34D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC21DB36-548D-4C8D-B4D5-104397A34D18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17E38C19-14AC-40B7-8F6D-98A020CBAD1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E38C19-14AC-40B7-8F6D-98A020CBAD1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E38C19-14AC-40B7-8F6D-98A020CBAD1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E38C19-14AC-40B7-8F6D-98A020CBAD1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{C007338E-27BE-4C4E-AB82-EABCD04EB582} = {A42CC452-0FC5-437C-BFFF-A7C7DB9CD3C4}
 		{FCC6037C-2B2C-45C7-9A0E-428D18ACD046} = {250DA9AA-1801-4E42-BFBC-59CE8CF64070}
+		{3EDFE94D-FB15-4066-B3D7-8B78C0D1A4F4} = {A42CC452-0FC5-437C-BFFF-A7C7DB9CD3C4}
 		{BC21DB36-548D-4C8D-B4D5-104397A34D18} = {250DA9AA-1801-4E42-BFBC-59CE8CF64070}
+		{17E38C19-14AC-40B7-8F6D-98A020CBAD1A} = {A42CC452-0FC5-437C-BFFF-A7C7DB9CD3C4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {51689FDD-FD73-45EA-A894-35DAC385895C}
