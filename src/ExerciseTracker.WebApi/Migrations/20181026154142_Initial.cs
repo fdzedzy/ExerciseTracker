@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ExerciseTracker.WebApi.Migrations
 {
-    public partial class InitialDb : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -36,7 +36,7 @@ namespace ExerciseTracker.WebApi.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "User",
+                name: "Users",
                 columns: table => new
                 {
                     UserId = table.Column<int>(nullable: false)
@@ -49,7 +49,7 @@ namespace ExerciseTracker.WebApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_User", x => x.UserId);
+                    table.PrimaryKey("PK_Users", x => x.UserId);
                 });
 
             migrationBuilder.CreateTable(
@@ -66,9 +66,9 @@ namespace ExerciseTracker.WebApi.Migrations
                 {
                     table.PrimaryKey("PK_UserCredential", x => x.UserCredentialId);
                     table.ForeignKey(
-                        name: "FK_UserCredential_User_UserId",
+                        name: "FK_UserCredential_Users_UserId",
                         column: x => x.UserId,
-                        principalTable: "User",
+                        principalTable: "Users",
                         principalColumn: "UserId",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -88,9 +88,9 @@ namespace ExerciseTracker.WebApi.Migrations
                 {
                     table.PrimaryKey("PK_Workout", x => x.WorkoutId);
                     table.ForeignKey(
-                        name: "FK_Workout_User_UserId",
+                        name: "FK_Workout_Users_UserId",
                         column: x => x.UserId,
-                        principalTable: "User",
+                        principalTable: "Users",
                         principalColumn: "UserId",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -174,7 +174,7 @@ namespace ExerciseTracker.WebApi.Migrations
                 name: "Workout");
 
             migrationBuilder.DropTable(
-                name: "User");
+                name: "Users");
         }
     }
 }

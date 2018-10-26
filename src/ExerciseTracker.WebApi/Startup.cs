@@ -30,6 +30,8 @@ namespace ExerciseTracker.WebApi
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<ExerciseTrackerDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("ExerciseTracker.WebApi")));
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

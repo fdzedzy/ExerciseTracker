@@ -99,7 +99,7 @@ namespace ExerciseTracker.WebApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("ExerciseTracker.Model.UserCredential", b =>

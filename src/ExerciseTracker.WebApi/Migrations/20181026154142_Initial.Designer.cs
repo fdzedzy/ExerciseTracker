@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExerciseTracker.WebApi.Migrations
 {
     [DbContext(typeof(ExerciseTrackerDbContext))]
-    [Migration("20181026131318_InitialDb")]
-    partial class InitialDb
+    [Migration("20181026154142_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -101,7 +101,7 @@ namespace ExerciseTracker.WebApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("ExerciseTracker.Model.UserCredential", b =>
